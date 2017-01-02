@@ -34,6 +34,9 @@
 <script type="text/javascript">
         
         $('.toggle-btn').click(function(){
+
+            console.log('clciked: '+    $('.toggle-btn').hasClass('collapsed'))
+
             if( $('#menu').hasClass('in') == true ){
                $(this).find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
                $(this).find('label').html('SHOW PARTIES')
