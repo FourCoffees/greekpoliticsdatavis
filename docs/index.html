@@ -40,7 +40,7 @@
         
             if(cl){
                 
-                $('.toggle-btn').parent().find('p').attr('display','none');
+                $('.toggle-btn').parent().find('p').css('display','none');
                 $('.toggle-btn').parent().css({'max-width':'92px', 'padding':" 10px 15px"})
                 // $('.nav-side-menu').css({'max-width':'92px', "top":"-25px"})
          
@@ -49,7 +49,7 @@
                 $('.toggle-btn').find('label').html('SHOW PARTIES')
                 cl = false;
             }else{
-                 $('.toggle-btn').parent().find('p').attr('display','block');
+                 $('.toggle-btn').parent().find('p').css('display','block');
                  $('.toggle-btn').parent().css({'max-width':'100%', 'padding':"15px"})
                  // $('.nav-side-menu').css({'max-width':'auto', "top":"0"})
          
