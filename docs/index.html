@@ -35,26 +35,27 @@
         
         $('.toggle-btn').click(function(){
 
-            console.log('clciked: '+    $('.toggle-btn').hasClass('collapsed'))
-
-            if( $('#menu').hasClass('in') == true ){
-               $(this).find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
-               $(this).find('label').html('SHOW PARTIES')
-
-
-            }else{
-               $(this).find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
-               $(this).find('label').html('HIDE PARTIES')
-            }
+            console.log('clciked: '+  $('.toggle-btn').hasClass('collapsed'))
         
-            if( $(this).hasClass('collapsed') ){
-                 $(this).parent().find('p').attr('display','none');
-                 $(this).parent().css({'max-width':'92px', 'padding':" 10px 15px"})
-                 $('.nav-side-menu').css({'max-width':'92px', "top":"-25px"})
+            if( $('.toggle-btn').hasClass('collapsed') ){
+                
+                $('.toggle-btn').parent().find('p').attr('display','none');
+                $('.toggle-btn').parent().css({'max-width':'92px', 'padding':" 10px 15px"})
+                $('.nav-side-menu').css({'max-width':'92px', "top":"-25px"})
+         
+ 
+                $('.toggle-btn').find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
+                $('.toggle-btn').find('label').html('SHOW PARTIES')
+
             }else{
-                 $(this).parent().find('p').attr('display','block');
-                 $(this).parent().css({'max-width':'100%', 'padding':"15px"})
+                 $('.toggle-btn').parent().find('p').attr('display','block');
+                 $('.toggle-btn').parent().css({'max-width':'100%', 'padding':"15px"})
                  $('.nav-side-menu').css({'max-width':'auto', "top":"0"})
+         
+                  $('.toggle-btn').find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
+                 $('.toggle-btn').find('label').html('HIDE PARTIES')
+
+
             }
 
         })
