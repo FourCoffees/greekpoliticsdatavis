@@ -36,7 +36,7 @@ $(document).ready(function(){
 	  .append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	d3.json("https://fourcoffees.github.io/data.json", function(dataIn) {
+	d3.json("data.json", function(dataIn) {
 	  data = dataIn;
 	  //Organise data function
 	  organiseData();
