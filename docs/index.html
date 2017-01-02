@@ -24,7 +24,7 @@
 <body>
 <div class="row "> 
     <div class="header col-lg-3 col-md-3 col-xs-5"> 
-        <div class="toggle-btn" data-toggle="collapse" data-target="#menu" >
+        <div class="toggle-btn collapsed" data-toggle="collapse" data-target="#menu" >
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <label>HIDE PARTIES</label>
         </div>
@@ -34,9 +34,11 @@
 <script type="text/javascript">
         
         $('.toggle-btn').click(function(){
-            if( $('#menu').hasClass('in') == false ){
+            if( $('#menu').hasClass('in') == true ){
                $(this).find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
                $(this).find('label').html('SHOW PARTIES')
+
+
             }else{
                $(this).find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
                $(this).find('label').html('HIDE PARTIES')
@@ -73,9 +75,9 @@
 
 </div>
 <div class="row">
-    <div class="nav-side-menu col-lg-3 col-md-3 col-xs-5" id="menu">
+    <div class="nav-side-menu collapse col-lg-3 col-md-3 col-xs-5" id="menu">
         <div class="menu-list">
-            <ul id="menu-content" class="menu-content collapse in legend">
+            <ul id="menu-content" class="menu-content legend">
             </ul>
         </div>
     </div>
