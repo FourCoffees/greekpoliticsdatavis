@@ -59,7 +59,6 @@ function organiseData(){
 
 		//get term start as date
 		dateStartTmp = v['Term'].substring(tt+2, tt + 12);
-		// console.log(parseDate(dateStartTmp));
 		v.dateTerm = parseDate(dateStartTmp);
 
 	});
@@ -70,7 +69,6 @@ function organiseData(){
 		.key(function(d) {return d.period;}) 
 		.entries(data);
 
-	console.log(partyGroup);
 
 	//Get party numbers over the years
 	grid = [];
@@ -84,7 +82,6 @@ function organiseData(){
 		}
 	}
 
-	console.log(grid);
 
 	PoliticalParties = d3.values(partyGroup).map(function(d) {
    		 return d.key; 
@@ -167,7 +164,7 @@ function makeLineGraph(){
 		        	electionYears.map(function(d) {  return new Date(d.key); })
 		        		.filter(function(b,i){
 			        		if(i>0 && b.getFullYear() - new Date(electionYears[i-1].key).getFullYear() > 1 ){ return true;}
-				        	else if(i==0){ console.log(b.getFullYear()); return true;} //show the first date one anyway
+				        	else if(i==0){ return true;} //show the first date one anyway
 			        	})
 			    )
 		        .tickFormat( d3.timeFormat("%Y") ) 
@@ -226,7 +223,7 @@ function makeLineGraph(){
     //  party timeline 
 	party.append("path")
 		.attr('class',  "partyline")
-		.attr("d", function(d) { console.log(d); return line(d.values); })
+		.attr("d", function(d) { return line(d.values); })
         .style("stroke", function(d) { 
         	if(extrainfo[d.key].color != "" && d.key!='INDEPENDENT'){ return extrainfo[d.key].color; }
         	else{ return "grey"; }
@@ -235,7 +232,6 @@ function makeLineGraph(){
     //  party election points 
 	circles = [];
 	party.each(function(d,v){
-		console.log(this);
 
 	    tt = d3.select(this).selectAll("circle.point")
 			.data( d.values )
@@ -302,7 +298,6 @@ function makeLineGraph(){
 
 function updateTooltip(thisorgi){
 		
-		console.log(thisorgi)
 		d3.select('.tooltip').style('display','block').style('opacity',1)
     	d3.select('.tooltipYear').text(''+ (new Date(thisorgi.key).getMonth()+1) +"/"+new Date(thisorgi.key).getFullYear() );
     	d3.select('.tooltipParty').text(thisorgi.values[0].Party).call(wrap,280);
