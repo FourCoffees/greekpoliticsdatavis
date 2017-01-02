@@ -34,14 +34,25 @@
 <script type="text/javascript">
         
         $('.toggle-btn').click(function(){
-            if( $('#menu-content').hasClass('collapse') ){
+            if( $('#menu').hasClass('in') == false ){
                $(this).find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
                $(this).find('label').html('SHOW PARTIES')
             }else{
-                $(this).find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
+               $(this).find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
                $(this).find('label').html('HIDE PARTIES')
-
             }
+        
+            if( $(this).hasClass('collapsed') ){
+                 $(this).parent().find('p').attr('display','none');
+                 $(this).parent().css({'max-width','92px', 'padding':" 10px 15px"})
+                 $('.nav-side-menu').css({'max-width','92px', "top":"-25px"})
+            }else{
+                 $(this).parent().find('p').attr('display','block');
+                 $(this).parent().css({'max-width','100%', 'padding':"15px"})
+                 $('.nav-side-menu').css({'max-width','auto', "top":"0"})
+              
+            }
+
         })
 
 </script>
@@ -52,12 +63,12 @@
 <div class="container-fluid">
 
     <div class="row">
-     <h2 class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"> Greek Election results from 1974 to present. </h2>
-    <h5  class="col-lg-4 col-lg-offset-0 col-md-5  col-md-offset-2  col-xs-11"> Each grey vertical line represents one gereral election. The darker horizontal line is the treshold for a majority goverment. <br>
+     <h2 class="col-lg-9 col-lg-offset-0 col-md-10 col-md-offset-0 col-xs-12"> Greek Election results from 1974 to present. </h2>
+    <h5  class="col-lg-4 col-lg-offset-0 col-md-5  col-md-offset-0  col-xs-11"> Each grey vertical line represents one gereral election. The darker horizontal line is the treshold for a majority goverment. <br>
     *** IN PROGRESS: More info soon *** 
     </h5>
 
-     <div id="timeline" class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"></div>
+     <div id="timeline" class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-0  col-xs-12"></div>
     </div>
      <h5 class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"> Data scrapped from <a href="www.hellenicparliament.gr" >hellenicparliament.gr</a></h5>
 
