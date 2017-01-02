@@ -32,12 +32,13 @@
     </div>
 </div>
 <script type="text/javascript">
-        
+        var cl = true;
+
         $('.toggle-btn').click(function(){
 
             console.log('clciked: '+  $('.toggle-btn').hasClass('collapsed'))
         
-            if( $('.toggle-btn').hasClass('collapsed') ){
+            if(cl){
                 
                 $('.toggle-btn').parent().find('p').attr('display','none');
                 $('.toggle-btn').parent().css({'max-width':'92px', 'padding':" 10px 15px"})
@@ -46,7 +47,7 @@
  
                 $('.toggle-btn').find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
                 $('.toggle-btn').find('label').html('SHOW PARTIES')
-
+                cl = false;
             }else{
                  $('.toggle-btn').parent().find('p').attr('display','block');
                  $('.toggle-btn').parent().css({'max-width':'100%', 'padding':"15px"})
@@ -54,9 +55,9 @@
          
                   $('.toggle-btn').find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
                  $('.toggle-btn').find('label').html('HIDE PARTIES')
-
-
+                 cl = true;
             }
+
 
         })
 
@@ -79,7 +80,7 @@
 
 </div>
 <div class="row">
-    <div class="nav-side-menu collapse col-lg-3 col-md-3 col-xs-5" id="menu">
+    <div class="nav-side-menu collapse in col-lg-3 col-md-3 col-xs-5" id="menu">
         <div class="menu-list">
             <ul id="menu-content" class="menu-content legend">
             </ul>
