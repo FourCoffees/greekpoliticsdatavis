@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" lang="en" content="greek politics, data Visualisation, elections">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Greek Politics Data Visualisations:  1 </title>
+
+    <!-- That's the 'official' path. Comment out, when working locally. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="extra.js"></script>
+
+    <!-- Store these two files in your application directory or on your path. -->
+    <script src="js.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+*** IN PROGRESS ***
+<div class="row "> 
+    <div class="header col-lg-3 col-md-3 col-xs-5"> 
+        <div class="toggle-btn" data-toggle="collapse" data-target="#menu" >
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <label>HIDE PARTIES</label>
+        </div>
+        <p>Choose a party to see more details</p>
+    </div>
+</div>
+<script type="text/javascript">
+        
+        $('.toggle-btn').click(function(){
+            if( $('#menu-content').hasClass('collapse') ){
+               $(this).find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
+               $(this).find('label').html('HIDE PARTIES')
+            }else{
+                $(this).find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
+               $(this).find('label').html('SHOW PARTIES')
+
+            }
+        })
+
+</script>
+<div class="container-fluid">
+
+    <div class="row">
+     <h2 class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"> Greek Election results from 1974 to present. </h2>
+     <h5 class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"> Data scrapped from http://www.hellenicparliament.gr </h5>
+
+     <div id="timeline" class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"></div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="nav-side-menu col-lg-3 col-md-3 col-xs-5" id="menu">
+        <div class="menu-list">
+            <ul id="menu-content" class="menu-content collapse in legend">
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.header{
+	position: fixed;
+	right: 0;
+	border-left: 1px solid #2e353d;
+	background-color: #2e353d;
+	color: white;
+	padding: 15px;
+	z-index: 100;
+}
+
+.toggle-btn,.toggle-btn label {
+	cursor: pointer;
+
+}
+
+svg{
+	margin-top: 50px;
+	margin-left:0%;
+}
+
+.grid line{
+	stroke-width:2px;
+	stroke: #f3f3f3;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.axis path.domain{
+	stroke: #d3d3d3 !important;
+}
+
+.majorityline path.domain{
+	display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width:2.3px;
+  cursor: pointer;
+}
+
+.party .point{
+  cursor: pointer;
+}
+
+.party .partyline{
+	display: none;
+	stroke-width:1.5px;
+	fill: none;
+}
+
+.legend .labels{
+	font-family: sans-serif;
+	letter-spacing: 0.3px;
+	font-size: 11px;
+	margin-top: 0.3em;
+}
+
+.tooltip {
+	opacity: 0;
+}
+
+.tooltip rect{
+	opacity: 0.6;
+}
+
+.tooltip text{
+	font-family: sans-serif;
+	letter-spacing: 0.3px;
+	font-size: 12px;
+	margin-top: 0.3em;
+}
+
+.tooltip .tooltipYear{
+	font-weight: bolder;
+	font-size: 0.9em;
+}
+
+.tooltip .tooltipParty{
+	font-weight: bolder;
+}
+
+.tooltip .tooltipImage{
+	height: 30px;
+	width: auto;
+}
+
+
+#mainGraph .PASOK.party,#mainGraph .INDI.party ,#mainGraph .SYRIZA.party ,#mainGraph .ND.party,
+#mainGraph .PASOK text, #mainGraph .INDI text ,#mainGraph .SYRIZA text,#mainGraph .ND text,
+#mainGraph .PASOK circle,#mainGraph .INDI circle,#mainGraph .SYRIZA circle,#mainGraph .ND circle
+ {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.INDI .circle, .ANMP .circle{
+	border:0.5px solid #000000;
+}
+
+
+/*SIDE MENU*/
+
+.nav-side-menu {
+  padding-top: 100px;
+  overflow: auto;
+  border-left: 1px solid  #2e353d;
+  position: fixed;
+  right: 0;
+  display: block;
+  top: 0px;
+  background-color: white;
+  height: 100%;
+
+}
+
+.nav-side-menu.collapse{
+	top:-16px;
+}
+
+.nav-side-menu.collapse.in{
+	top:0px;
+}
+
+
+.nav-side-menu ul,
+.nav-side-menu li {
+  cursor: pointer;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.legend .cls{
+	cursor: pointer;
+	/*display: inline-block;
+	vertical-align: top;*/
+	margin-left: 10px;
+	margin-bottom: 15px;
+	/*min-height: 60px;*/
+	max-width: 300px;
+	padding: 5px;
+}
+
+
+.legend .cls.clicked{
+	background-color: black;
+	color: white;
+}
