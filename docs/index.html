@@ -36,10 +36,10 @@
         $('.toggle-btn').click(function(){
             if( $('#menu-content').hasClass('collapse') ){
                $(this).find('span').removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-left');
-               $(this).find('label').html('HIDE PARTIES')
+               $(this).find('label').html('SHOW PARTIES')
             }else{
                 $(this).find('span').removeClass('glyphicon-chevron-left').addClass('glyphicon-chevron-right')   
-               $(this).find('label').html('SHOW PARTIES')
+               $(this).find('label').html('HIDE PARTIES')
 
             }
         })
@@ -53,9 +53,9 @@
 
     <div class="row">
      <h2 class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"> Greek Election results from 1974 to present. </h2>
-    <p> Each grey vertical line represents one gereral election. The darker horizontal line is the treshold for a majority goverment. 
+    <h5  class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"> Each grey vertical line represents one gereral election. The darker horizontal line is the treshold for a majority goverment. 
     *** IN PROGRESS: More info soon *** 
-    </p>
+    </h5>
 
      <div id="timeline" class="col-lg-9 col-lg-offset-0 col-md-10  col-md-offset-2  col-xs-12"></div>
     </div>
